@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react'
-import RNFabsModule, { Counter } from 'react-native-fabs'
+import * as ActionButton from 'react-native-fabs'
+
+console.log(ActionButton)
 
 const App = () => {
-  useEffect(() => {
-    console.log(RNFabsModule)
-  })
-
-  return <Counter />
+  return <ActionButton />
 }
 
 export default App
