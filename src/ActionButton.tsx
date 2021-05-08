@@ -20,6 +20,7 @@ import {
 } from './shared'
 
 export interface ActionButtonProps extends ViewProps {
+  children: React.ReactNode
   btnOutRange?: string
   resetToken?: any
   active?: boolean
@@ -89,7 +90,7 @@ const defaultProps = {
   accessible: undefined,
 }
 
-const ActionButton: React.FC<ActionButtonProps & typeof defaultProps> = ({
+const ActionButton = ({
   children,
   resetToken,
   active,
@@ -129,7 +130,7 @@ const ActionButton: React.FC<ActionButtonProps & typeof defaultProps> = ({
   accessibilityLabel,
   style,
   spacing,
-}) => {
+}: ActionButtonProps & typeof defaultProps) => {
   const [, setResetToken] = useState(resetToken)
   const [activeState, setActive] = useState(active)
   const anim = useRef(new Animated.Value(active ? 1 : 0))
