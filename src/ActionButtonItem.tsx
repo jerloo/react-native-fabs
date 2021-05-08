@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import * as React from 'react'
+import { Component } from 'react'
 import {
   Animated,
   Dimensions,
@@ -63,6 +64,10 @@ export default class ActionButtonItem extends Component<
 > {
   static get defaultProps() {
     return defaultProps
+  }
+
+  constructor(props: ActionButtonItemProps & typeof defaultProps) {
+    super(props)
   }
 
   render() {

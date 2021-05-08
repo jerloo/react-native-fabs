@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import * as React from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   Animated,
   StyleSheet,
@@ -147,7 +148,7 @@ const ActionButton: React.FC<ActionButtonProps & typeof defaultProps> = ({
   useEffect(() => {
     if (active) {
       Animated.spring(anim.current, {
-        useNativeDriver: true,
+        useNativeDriver: false,
         toValue: 1,
       }).start()
       setActive(true)
@@ -156,7 +157,7 @@ const ActionButton: React.FC<ActionButtonProps & typeof defaultProps> = ({
       onReset && onReset()
 
       Animated.spring(anim.current, {
-        useNativeDriver: true,
+        useNativeDriver: false,
         toValue: 0,
       }).start()
       timeout.current = setTimeout(() => {
@@ -402,7 +403,7 @@ const ActionButton: React.FC<ActionButtonProps & typeof defaultProps> = ({
 
     if (animate) {
       Animated.spring(anim.current, {
-        useNativeDriver: true,
+        useNativeDriver: false,
         toValue: 1,
       }).start()
     } else {
@@ -417,7 +418,7 @@ const ActionButton: React.FC<ActionButtonProps & typeof defaultProps> = ({
 
     if (animate) {
       Animated.spring(anim.current, {
-        useNativeDriver: true,
+        useNativeDriver: false,
         toValue: 0,
       }).start()
     } else {
