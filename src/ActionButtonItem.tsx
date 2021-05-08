@@ -12,7 +12,7 @@ import {
   ViewStyle,
 } from 'react-native'
 
-import { ActionButtonProps } from '.'
+import { ActionButtonProps } from './ActionButton'
 import {
   alignItemsMap,
   DEFAULT_ACTIVE_OPACITY,
